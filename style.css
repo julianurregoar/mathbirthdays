@@ -1,0 +1,181 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-bg-color: #5744fe;
+  --title-color: #b8f2e6;
+  --subtitle-color: #e5989b;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+button {
+  border: 2px solid var(--main-bg-color);
+  color: white;
+  width: 150px;
+  height: 50px;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-size: 16px;
+  margin: auto;
+  margin-top: 1rem;
+  filter: drop-shadow(0px 5px 3px var(--main-bg-color));
+}
+
+header {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  height: 10vh;
+  align-items: center;
+}
+
+.logo-text {
+  display: flex;
+}
+
+.text {
+  flex: 1;
+  font-weight: 400;
+  margin: 5px;
+}
+
+.presentation {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  min-height: 80vh;
+  align-items: center;
+}
+
+.introduction {
+  flex: 1;
+}
+
+.intro-text h1 {
+  font-size: 44px;
+  font-weight: 500;
+}
+
+.intro-text p {
+  margin-top: 5px;
+  font-size: 22px;
+  color: var(--subtitle-color);
+}
+
+.cover {
+  display: flex;
+  height: 50vh;
+  align-items: center;
+}
+
+.cover img {
+  height: 100%;
+  animation: drop 1.5s ease;
+}
+
+.cta-container {
+  padding: 5px 0px 0px 0px;
+  flex: display;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.input {
+  width: 80%;
+  margin: auto;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+.call-to-action {
+  display: inline;
+  align-items: center;
+  margin: auto;
+}
+.cta-select {
+  background-color: var(--main-bg-color);
+  color: white;
+}
+
+.cta-reset {
+  background-color: white;
+  color: black;
+}
+
+.message-container {
+  width: 80%;
+  margin: auto;
+  margin-top: 2rem;
+  text-align: center;
+  align-items: center;
+}
+
+.message {
+  font-size: 18px;
+  font-weight: 500;
+  font-weight: bold;
+  background-color: #b8f2e6;
+  padding: 20px;
+  border-style: initial;
+  border-radius: 2px;
+  animation: goup 1.5s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-80%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes goup {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .presentation {
+    flex-direction: column;
+  }
+  .introduction {
+    margin-top: 5vh;
+    text-align: center;
+  }
+  .intro-text h1 {
+    font-size: 30px;
+  }
+  .intro-text p {
+    font-size: 18px;
+  }
+  .cta {
+    padding: 10px 0px 0px 0px;
+  }
+  .cover img {
+    height: 80%;
+  }
+}
