@@ -8,11 +8,21 @@ This project was done using HTML, vanilla CSS and vanilla JavaScript.
 - style.css
 - app.js
 
-## wireframes proposals
+## Wireframes proposals
 
 I thought in three option to develop this project:
 
+1. First
+
 ![First option](https://res.cloudinary.com/julianurrego/image/upload/v1599186824/ioblkgyninzqs7piqn6k.png)
+
+2. Second
+
+![Second option](https://res.cloudinary.com/julianurrego/image/upload/v1599186824/d7jl5v9add60r23hdtka.png)
+
+3. Third
+
+![Third option](https://res.cloudinary.com/julianurrego/image/upload/v1599186824/atcvki7ex9qat5qk69kh.png)
 
 ### Deployment
 
