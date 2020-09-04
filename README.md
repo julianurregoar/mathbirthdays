@@ -27,3 +27,5 @@ I thought in three options to develop this project, so I chose the first one bec
 ## Deployment
 
 You can fine the site deployed in [https://mathbirthdays.vercel.app/](https://mathbirthdays.vercel.app/)
+
+Thanks AllTheRooms team.
