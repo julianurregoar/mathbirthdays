@@ -25,7 +25,7 @@ const mathYearsOld = (userDaysLived) => {
   return Math.floor(yearsOld);
 };
 
-const nextBirthdayDateFnc = (days) => {
+const getNextBirthdayDate = (days) => {
   const timestampToNextBirthday = days * (1000 * 60 * 60 * 24);
   const date = new Date(todayTime + timestampToNextBirthday), //milliseconds
     day = date.getDate(),
@@ -35,7 +35,7 @@ const nextBirthdayDateFnc = (days) => {
   return `${day}-${month}-${year}`;
 };
 
-const messageFnc = (
+const composeMessage = (
   mathBirthday,
   userDaysLived,
   daysLeftToNextMathBirthday,
@@ -66,30 +66,35 @@ function numberWithCommas(number) {
 const date = calculateButton.addEventListener("click", async (event) => {
   event.preventDefault();
   const birthday = await timestampBirthday("user-input");
+
   if (!birthday) {
     errorMessage.classList.remove("hidden");
     return setTimeout(() => {
       errorMessage.classList.add("hidden");
     }, 3000);
   }
+
   const userDaysLived = await timestampDaysLived(birthday);
   const mathBirthday = await mathYearsOld(userDaysLived);
   const nextMathBirthday = mathBirthday + 1;
   const daysLivedNextMathBirthday = 10 ** nextMathBirthday;
   const daysLeftToNextMathBirthday = daysLivedNextMathBirthday - userDaysLived;
-  const nextBirthdayDate = nextBirthdayDateFnc(daysLeftToNextMathBirthday);
-  const message = await messageFnc(
+
+  const nextBirthdayDate = getNextBirthdayDate(daysLeftToNextMathBirthday);
+
+  const message = await composeMessage(
     mathBirthday,
     userDaysLived,
     daysLeftToNextMathBirthday,
     nextBirthdayDate
   );
+
   finalMessage.classList.remove("hidden");
   resetButton.classList.remove("hidden");
   finalMessage.innerHTML = message;
 });
 
-//reset button
+//reset
 const reset = resetButton.addEventListener("click", async (event) => {
   event.preventDefault();
   finalMessage.classList.add("hidden");
