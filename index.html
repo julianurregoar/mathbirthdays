@@ -9,20 +9,28 @@
     />
 
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Math Birthdays</title>
   </head>
   <body>
     <header>
       <div class="">
-        <h4 class="text">Mathy, your birthday math assistant</h4>
+        <h4 class="text">
+          <strong>Mathy</strong>, your birthday math assistant
+        </h4>
       </div>
     </header>
     <main>
+      <p id="error" class="message error-message hidden">
+        Plesase select a date to calculate your math birthday. Mathy
+      </p>
       <section class="presentation">
         <div class="introduction">
           <div class="intro-text">
-            <h1>Welcome to the future or your birthday</h1>
-            <p>I am Mathy, and I have a new way to know about your birthday.</p>
+            <h1>Welcome to the future of your birthday</h1>
+            <p>
+              I am <span class="mathy"> Mathy, </span> and I have a new way to
+              know about your birthday.
+            </p>
           </div>
           <div class="cta-container">
             <form class="form">
@@ -37,7 +45,7 @@
               </div>
             </form>
             <div class="message-container">
-              <p id="message" class="message hidden"></p>
+              <p id="message" class="message good-message hidden"></p>
             </div>
           </div>
         </div>
@@ -48,20 +56,6 @@
           />
         </div>
       </section>
-      <!-- <section class="list">
-        <table id="customers">
-          <tr>
-            <th>Famous</th>
-            <th>Year Old</th>
-            <th>Years Math Old</th>
-          </tr>
-          <tr>
-            <td>Will Smith</td>
-            <td>33</td>
-            <td>45.000</td>
-          </tr>
-        </table>
-      </section> -->
     </main>
   </body>
   <script type="text/javascript" src="app.js"></script>

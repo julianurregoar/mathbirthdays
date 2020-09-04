@@ -8,10 +8,14 @@
   --main-bg-color: #5744fe;
   --title-color: #b8f2e6;
   --subtitle-color: #e5989b;
+  --message-color: #b8f2e6;
+  --error-message-color: #e36588;
 }
 
 body {
   font-family: "Poppins", sans-serif;
+  width: 90%;
+  margin: auto;
 }
 
 button {
@@ -25,6 +29,15 @@ button {
   margin: auto;
   margin-top: 1rem;
   filter: drop-shadow(0px 5px 3px var(--main-bg-color));
+}
+
+.message {
+  font-size: 18px;
+  font-weight: 500;
+  font-weight: bold;
+  padding: 20px;
+  border-style: initial;
+  border-radius: 2px;
 }
 
 header {
@@ -90,7 +103,7 @@ header {
   flex-direction: column;
 }
 .input {
-  width: 80%;
+  width: 100%;
   margin: auto;
   margin-top: 1rem;
   font-size: 1.2rem;
@@ -98,11 +111,12 @@ header {
   padding: 0.5rem 1rem;
 }
 
-.call-to-action {
+.cta {
   display: inline;
   align-items: center;
   margin: auto;
 }
+
 .cta-select {
   background-color: var(--main-bg-color);
   color: white;
@@ -121,21 +135,34 @@ header {
   align-items: center;
 }
 
-.message {
-  font-size: 18px;
-  font-weight: 500;
-  font-weight: bold;
-  background-color: #b8f2e6;
-  padding: 20px;
-  border-style: initial;
-  border-radius: 2px;
+.good-message {
+  background-color: var(--message-color);
   animation: goup 1.5s ease;
+}
+
+.error-message {
+  background-color: var(--error-message-color);
+  animation: godown 1.5s ease;
+}
+
+.list {
+  background-color: gray;
+  width: 90%;
+  margin: auto;
+  height: 40vh;
+  margin-bottom: 2rem;
+  border-collapse: collapse;
 }
 
 .hidden {
   display: none;
 }
 
+.mathy {
+  color: var(--main-bg-color);
+}
+
+/* Animations */
 @keyframes drop {
   0% {
     opacity: 0;
@@ -158,6 +185,18 @@ header {
   }
 }
 
+@keyframes godown {
+  0% {
+    opacity: 0;
+    transform: translateY(-80%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* Media queries */
 @media screen and (max-width: 1024px) {
   .presentation {
     flex-direction: column;

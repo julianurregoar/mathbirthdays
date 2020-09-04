@@ -1,8 +1,9 @@
 //constants
-const button = document.getElementById("calculate-button");
+const calculateButton = document.getElementById("calculate-button");
 const resetButton = document.getElementById("reset-button");
+const errorMessage = document.getElementById("error");
 const input = document.getElementById("user-input");
-const htmlMessage = document.getElementById("message");
+const finalMessage = document.getElementById("message");
 const todayTime = new Date().getTime(); // javaScript timestamp
 const todayMaxValue = new Date().toISOString().substr(0, 10);
 const base = 10;
@@ -59,14 +60,17 @@ function numberWithCommas(number) {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-//actions
+//ACTIONS
 
-//.calculate
-const date = button.addEventListener("click", async (event) => {
+//calculate
+const date = calculateButton.addEventListener("click", async (event) => {
   event.preventDefault();
   const birthday = await timestampBirthday("user-input");
   if (!birthday) {
-    return alert("Please select a date.");
+    errorMessage.classList.remove("hidden");
+    return setTimeout(() => {
+      errorMessage.classList.add("hidden");
+    }, 3000);
   }
   const userDaysLived = await timestampDaysLived(birthday);
   const mathBirthday = await mathYearsOld(userDaysLived);
@@ -80,15 +84,15 @@ const date = button.addEventListener("click", async (event) => {
     daysLeftToNextMathBirthday,
     nextBirthdayDate
   );
-  htmlMessage.classList.remove("hidden");
+  finalMessage.classList.remove("hidden");
   resetButton.classList.remove("hidden");
-  htmlMessage.innerHTML = message;
+  finalMessage.innerHTML = message;
 });
 
 //reset button
 const reset = resetButton.addEventListener("click", async (event) => {
   event.preventDefault();
-  htmlMessage.classList.add("hidden");
+  finalMessage.classList.add("hidden");
   resetButton.classList.add("hidden");
-  htmlMessage.innerHTML = "";
+  finalMessage.innerHTML = "";
 });
